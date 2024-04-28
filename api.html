@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>api universe</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* Custom CSS for header animation */
+      @keyframes moveText {
+        0% {
+          transform: translateX(-100%);
+        } /* Start from left */
+        100% {
+          transform: translateX(100%);
+        } /* Move to right */
+      }
+
+      .header-animation {
+        animation: moveText 5s linear infinite; /* Run animation infinitely */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="bg-success py-5 mb-4">
+      <div class="container">
+        <h1 class="text-light mb-0 header-animation">AI powering up</h1>
+      </div>
+    </header>
+    <!-- card container   display cards-->
+    <section class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="card-container"></div>
+    </section>
+
+    <!-- see more   -->
+    <div class="text-center" id="see-more">
+      <button class="btn btn-primary rounded" onclick="seeMore()">
+        see more
+      </button>
+    </div>
+
+    <!-- spinner loaded  -->
+    <section>
+      <div class="d-flex justify-content-center d-none" id="spinner">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </section>
+    <!-- modal  -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="technologyModal"
+      tabindex="-1"
+      aria-labelledby="technologyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body container p-4" id="technology-body"></div>
+          <div class=""></div>
+        </div>
+      </div>
+    </div>
+    <script src="api.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap Bundle JS (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <!-- footer -->
+
+  <div class="">
+    <footer
+      class="text-center text-lg-start text-white"
+      style="background-color: #1c2331"
+    >
+      <section class="mt-4">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold">information</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <p>
+                AI's rapid expansion reshapes industries, revolutionizing daily
+                life with exponential growth, promising advancements in
+                technology, automation, and problem-solving capabilities
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Products</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <p>
+                <a href="#!" class="text-white">Ai bard</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Chatgpt</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">You chat</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Chat sonic</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Useful links</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <p>
+                <a href="#!" class="text-white">Home</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Contact</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Ai technologies</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Help</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Contact</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <p><i class="fas fa-home mr-3"></i> Sylhet, Bangladesh</p>
+              <p><i class="fas fa-envelope mr-3"></i> mahbub@example.com</p>
+              <p><i class="fas fa-phone mr-3"></i> + 8801712345678</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >Ai universe hub</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!-- End of .container -->
+</html>
